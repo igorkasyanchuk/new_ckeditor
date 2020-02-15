@@ -5,11 +5,16 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= javascript_include_tag 'application' %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
   </head>
 
   <body>
+    <ul>
+      <li><%= link_to 'Regula Form', '/posts/new' %></li>
+      <li><%= link_to 'Simple Form', '/users/new' %></li>
+    </ul>
+    <br/>
     <%= yield %>
-    <%= javascript_include_tag 'application' %>
   </body>
 </html>
