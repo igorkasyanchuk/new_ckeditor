@@ -1,5 +1,5 @@
 <script>
-  ClassicEditor
+  <%= editor %>
       .create( document.querySelector( '#<%= id %>' ), {
         toolbar: {
           items: [
@@ -21,19 +21,9 @@
             'undo',
             'redo',
             '|',
-            'autoformat',
-            'image',
-            'imageStyle',
-            'imageToolbar',
-            'pastFromOffice',
-            'table',
-            'tableToolbar',
             'fontSize',
             'fontColor',
             'fontBackgroundColor',
-            'horizontalLine',
-            'essentials',
-            'paragraph'
           ]
         },
         simpleUpload: {
@@ -61,7 +51,7 @@
         },
       } )
       .then( editor => {
-        window.editor = editor;
+
       } )
       .catch( error => {
         console.error( error );

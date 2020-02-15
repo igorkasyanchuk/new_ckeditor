@@ -13,6 +13,7 @@ module NewCkeditor
 
     def initialize(template, options)
       @template = template
+      options.delete(:required) # to avoid bug of validating empty textarea
       @options  = options.stringify_keys
     end
 
@@ -33,8 +34,14 @@ module NewCkeditor
 
     def render(input, options)
       output_buffer << input
-      output_buffer << @template.render('/new_ckeditor/shared/editor', id: options["id"])
+      output_buffer << @template.render('/new_ckeditor/shared/editor', id: options["id"], editor: editor)
       output_buffer
+    end
+
+    def editor
+      #"InlineEditor"
+      #"BalloonEditor"
+      "ClassicEditor"
     end
 
     def output_buffer

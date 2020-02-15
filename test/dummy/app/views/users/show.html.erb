@@ -12,7 +12,9 @@
 
 <p>
   <strong>About:</strong>
-  <%= @user.about %>
+  <div class="ck-content">
+    <%= raw @user.about %>
+  </div>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

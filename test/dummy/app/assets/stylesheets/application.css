@@ -11,5 +11,23 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
+ *= require new_ckeditor/ckeditor
  *= require_self
  */
+
+ul li {
+  float: left;
+  padding-right: 40px;
+}
+
+.clear {
+  clear: both;
+}
+
+.ck-editor__editable {
+  min-height: 500px;
+}
+
+.ck-editor__editable.ck-editor__nested-editable {
+  min-height: auto;
+}

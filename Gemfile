@@ -16,3 +16,4 @@ gemspec
 
 gem 'pry'
 gem 'simple_form'
+gem 'simplecov'

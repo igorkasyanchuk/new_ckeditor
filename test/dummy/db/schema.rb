@@ -10,9 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_15_102804) do
+ActiveRecord::Schema.define(version: 2020_02_15_210712) do
+
+  create_table "ck_editor_images", force: :cascade do |t|
+    t.string "file"
+    t.integer "user_id"
+    t.integer "parent_id"
+    t.string "parent_type"
+    t.datetime "created_at"
+    t.index ["parent_id", "parent_type"], name: "index_ck_editor_images_on_parent_id_and_parent_type"
+    t.index ["user_id"], name: "index_ck_editor_images_on_user_id"
+  end
 
   create_table "posts", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "projects", force: :cascade do |t|
     t.string "title"
     t.text "description"
     t.datetime "created_at", precision: 6, null: false

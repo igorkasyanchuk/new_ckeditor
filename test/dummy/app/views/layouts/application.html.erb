@@ -5,15 +5,18 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= javascript_include_tag 'application' %>
+    <%= yield :js %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
   </head>
 
   <body>
-    <ul>
-      <li><%= link_to 'Regula Form', '/posts/new' %></li>
-      <li><%= link_to 'Simple Form', '/users/new' %></li>
+    <ul style="background: #eee">
+      <li><%= link_to 'Users Simple Form (classic)', '/users/new' %></li>
+      <li><%= link_to 'Projects Regular Form (balloon) ---- FUTURE (textarea not works)', '/projects/new' %></li>
+      <li><%= link_to 'Posts Simple Form (inline) --- FUTURE (textarea not works)', '/posts/new' %></li>
     </ul>
+    <div class="clear"></div>
+    <br/>
     <br/>
     <%= yield %>
   </body>
