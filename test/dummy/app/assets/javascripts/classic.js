@@ -1,0 +1,1 @@
+//= require new_ckeditor/classic/ckeditor.js
