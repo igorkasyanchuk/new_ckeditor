@@ -1,0 +1,65 @@
+<div id="<%= id %>_div"></div>
+
+<script>
+  document.getElementById("<%= id %>_div").innerHTML = document.getElementById("<%= id %>").value;
+
+  InlineEditor
+      .create( document.querySelector( '#<%= id %>_div' ), {
+        toolbar: {
+          items: [
+            'heading',
+            '|',
+            'bold',
+            'italic',
+            'link',
+            'bulletedList',
+            'numberedList',
+            '|',
+            'indent',
+            'outdent',
+            '|',
+            'imageUpload',
+            'blockQuote',
+            'insertTable',
+            'mediaEmbed',
+            'undo',
+            'redo',
+            '|',
+            'fontSize',
+            'fontColor',
+            'fontBackgroundColor',
+          ]
+        },
+        simpleUpload: {
+          uploadUrl: '/upload',
+          headers: {
+              'X-CSRF-Token': document.querySelectorAll('meta[name="csrf-token"]')[0].content
+          }
+        },
+        language: 'en',
+        image: {
+          toolbar: [ 'imageTextAlternative', '|', 'imageStyle:alignLeft', 'imageStyle:full', 'imageStyle:alignRight' ],
+
+            styles: [
+                'full',
+                'alignLeft',
+                'alignRight'
+            ]
+        },
+        table: {
+          contentToolbar: [
+            'tableColumn',
+            'tableRow',
+            'mergeTableCells'
+          ]
+        },
+      } )
+      .then( editor => {
+        editor.model.document.on( 'change:data', () => {
+          document.getElementById("<%= id %>").value= editor.getData();
+        });
+      } )
+      .catch( error => {
+        console.error( error );
+      } );
+</script>

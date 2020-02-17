@@ -7,7 +7,9 @@
 
 <p>
   <strong>Description:</strong>
-  <%= @post.description %>
+  <div class="ck-content">
+    <%= raw @post.description %>
+  </div>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |

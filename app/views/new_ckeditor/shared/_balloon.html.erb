@@ -1,6 +1,10 @@
+<div id="<%= id %>_div"></div>
+
 <script>
-  <%= editor %>
-      .create( document.querySelector( '#<%= id %>' ), {
+  document.getElementById("<%= id %>_div").innerHTML = document.getElementById("<%= id %>").value;
+
+  BalloonEditor
+      .create( document.querySelector( '#<%= id %>_div' ), {
         toolbar: {
           items: [
             'heading',
@@ -29,7 +33,7 @@
         simpleUpload: {
           uploadUrl: '/upload',
           headers: {
-              'X-CSRF-TOKEN': 'CSFR-Token'
+              'X-CSRF-Token': document.querySelectorAll('meta[name="csrf-token"]')[0].content
           }
         },
         language: 'en',
@@ -51,7 +55,9 @@
         },
       } )
       .then( editor => {
-
+        editor.model.document.on( 'change:data', () => {
+          document.getElementById("<%= id %>").value= editor.getData();
+        });
       } )
       .catch( error => {
         console.error( error );

@@ -11,3 +11,5 @@ test/dummy/tmp/
 
 *.gem
 coverage
+
+test/dummy/public/uploads

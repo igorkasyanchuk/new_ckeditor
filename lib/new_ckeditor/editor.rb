@@ -14,7 +14,7 @@ module NewCkeditor
     def initialize(template, options)
       @template = template
       options.delete(:required) # to avoid bug of validating empty textarea
-      @options  = options.stringify_keys
+      @options = options.stringify_keys!
     end
 
     def render_instance_tag(object_name, method)
@@ -34,14 +34,12 @@ module NewCkeditor
 
     def render(input, options)
       output_buffer << input
-      output_buffer << @template.render('/new_ckeditor/shared/editor', id: options["id"], editor: editor)
+      output_buffer << @template.render("/new_ckeditor/shared/#{editor}", id: options["id"])
       output_buffer
     end
 
     def editor
-      #"InlineEditor"
-      #"BalloonEditor"
-      "ClassicEditor"
+      options["editor_template"].to_s.presence || 'classic'
     end
 
     def output_buffer
@@ -49,10 +47,10 @@ module NewCkeditor
     end
 
     def build_tag(object_name, method)
-      if defined?(ActionView::Base::Tags::TextArea)
+      if options['editor_type'].to_s == 'classic'
         ActionView::Base::Tags::TextArea.new(object_name, method, template, options.symbolize_keys)
       else
-        ActionView::Base::InstanceTag.new(object_name, method, template, options.delete('object'))
+        ActionView::Base::Tags::HiddenField.new(object_name, method, template, options.symbolize_keys)
       end
     end
   end

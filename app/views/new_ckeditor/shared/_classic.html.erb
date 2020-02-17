@@ -1,0 +1,58 @@
+<script>
+  ClassicEditor
+      .create( document.querySelector( '#<%= id %>' ), {
+        toolbar: {
+          items: [
+            'heading',
+            '|',
+            'bold',
+            'italic',
+            'link',
+            'bulletedList',
+            'numberedList',
+            '|',
+            'indent',
+            'outdent',
+            '|',
+            'imageUpload',
+            'blockQuote',
+            'insertTable',
+            'mediaEmbed',
+            'undo',
+            'redo',
+            '|',
+            'fontSize',
+            'fontColor',
+            'fontBackgroundColor',
+          ]
+        },
+        simpleUpload: {
+          uploadUrl: '/upload',
+          headers: {
+              'X-CSRF-Token': document.querySelectorAll('meta[name="csrf-token"]')[0].content
+          }
+        },
+        language: 'en',
+        image: {
+          toolbar: [ 'imageTextAlternative', '|', 'imageStyle:alignLeft', 'imageStyle:full', 'imageStyle:alignRight' ],
+
+            styles: [
+                'full',
+                'alignLeft',
+                'alignRight'
+            ]
+        },
+        table: {
+          contentToolbar: [
+            'tableColumn',
+            'tableRow',
+            'mergeTableCells'
+          ]
+        },
+      } )
+      .then( editor => {
+      } )
+      .catch( error => {
+        console.error( error );
+      } );
+</script>
