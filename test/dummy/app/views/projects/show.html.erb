@@ -1,3 +1,7 @@
+<%= content_for :js do %>
+  <%= javascript_include_tag 'balloon' %>
+<% end %>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -5,12 +9,11 @@
   <%= @project.title %>
 </p>
 
-<p>
-  <strong>Description:</strong>
-  <div class="ck-content">
-    <%= raw @project.description %>
-  </div>
-</p>
+<h2 style='color: red'>Edit INLINE BELOW:</h2>
+
+<%= ckeditor_tag :description, @project.description, editor: { template: :balloon, type: :balloon, js: "sendData(editorHiddenField.value)" } %>
+
+<br>
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
