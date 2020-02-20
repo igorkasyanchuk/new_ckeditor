@@ -1,6 +1,12 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
+  def update_inline
+    @project = Project.find(params[:id])
+    @project.update(description: params[:content])
+    head :ok
+  end
+
   # GET /projects
   def index
     @projects = Project.all

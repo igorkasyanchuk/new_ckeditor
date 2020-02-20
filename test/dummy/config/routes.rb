@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   mount NewCkeditor::Engine => '/ckeditor'
 
-  resources :projects
+  resources :projects do
+    put :update_inline, on: :member
+  end
   resources :users
   resources :posts
-  root to: 'posts#index'
 
-#  post '/upload', to: 'posts#upload'
+  root to: 'posts#index'
 end

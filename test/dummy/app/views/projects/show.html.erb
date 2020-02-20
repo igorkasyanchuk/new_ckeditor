@@ -11,7 +11,7 @@
 
 <h2 style='color: red'>Edit INLINE BELOW:</h2>
 
-<%= ckeditor_tag :description, @project.description, editor: { template: :balloon, type: :balloon, js: "sendData(editorHiddenField.value)" } %>
+<%= ckeditor_tag :description, @project.description, editor: { template: :balloon, type: :balloon, js: "sendData('#{update_inline_project_path(@project)}', editorHiddenField.value)" } %>
 
 <br>
 

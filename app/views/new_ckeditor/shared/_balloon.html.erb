@@ -55,14 +55,14 @@
         },
       } )
       .then( editor => {
-        var editorHiddenField = document.getElementById("<%= id %>");
-        editor.model.document.on( 'change:data', () => {
-          editorHiddenField.value = editor.getData();
-          <%= options.dig("editor", "js") %>;
-        });
         // edit code here
         // if you want to change logic and for example
         // to send data to server using AJAX
+        var editorHiddenField = document.getElementById("<%= id %>");
+        editor.model.document.on( 'change:data', () => {
+          editorHiddenField.value = editor.getData();
+          <%= raw options.dig("editor", "js") %>;
+        });
       } )
       .catch( error => {
         console.error( error );
