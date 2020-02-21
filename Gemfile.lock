@@ -2,7 +2,6 @@ PATH
   remote: .
   specs:
     new_ckeditor (0.1.0)
-      carrierwave
       rails
 
 GEM
@@ -166,6 +165,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  carrierwave
   new_ckeditor!
   pry
   simple_form

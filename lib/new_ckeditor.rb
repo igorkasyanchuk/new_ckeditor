@@ -1,5 +1,4 @@
 require "new_ckeditor/engine"
-require "carrierwave"
 
 module NewCkeditor
   autoload :Editor, 'new_ckeditor/editor'
