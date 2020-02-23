@@ -1,12 +1,3 @@
-function serialize(obj) {
-  var str = [];
-  for (var p in obj)
-    if (obj.hasOwnProperty(p)) {
-      str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
-    }
-  return str.join("&");
-}
-
 function sendData(url, content) {
   var xhr = new XMLHttpRequest();
 
@@ -26,7 +17,7 @@ function sendData(url, content) {
 
   xhr.open('PUT', url);
   xhr.setRequestHeader('X-CSRF-Token', document.querySelectorAll('meta[name="csrf-token"]')[0].content);
-  
+
   data = new FormData();
   data.set("content", content);
 

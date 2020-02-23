@@ -90,6 +90,14 @@ Run this migration.
 
 To use same CSS as in editor, to keep consistent UI:
 
+Require CSS file in `application.css`:
+
+```css
+ *= require new_ckeditor/ckeditor.css
+```
+
+And in the view wrap output in `.ck-content` class:
+
 ```erb
 <p>
   <strong>About:</strong>
@@ -98,6 +106,7 @@ To use same CSS as in editor, to keep consistent UI:
   </div>
 </p>
 ```
+
 More documentation: https://ckeditor.com/docs/ckeditor5/latest/builds/guides/integration/content-styles.html
 
 ## Styling
@@ -127,6 +136,7 @@ You can editor in some parent div and set height explicitly for editor inside.
 - CSFR-Token
 - support inline editor?
 - remove title plugin
+- check how it works with turbolinks
 
 ## Customization
 

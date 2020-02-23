@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
   def upload
     render json: {
-      url: "https://i2.rozetka.ua/goods/14622126/philips_32pfs6402_12_images_14622126021.jpg"
+      url: "https://images.theconversation.com/files/301743/original/file-20191114-26207-lray93.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip"
       # "error": {
       #   "message": "The image upload failed because the image was too big (max 1.5MB)."
       # }
