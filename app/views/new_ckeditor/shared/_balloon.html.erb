@@ -11,15 +11,15 @@
 						'|',
 						'bold',
 						'italic',
-						'strikethrough',
 						'underline',
+						'strikethrough',
 						'link',
 						'bulletedList',
 						'numberedList',
+						'alignment',
 						'|',
 						'indent',
 						'outdent',
-						'alignment',
 						'|',
 						'imageUpload',
 						'blockQuote',
@@ -33,10 +33,10 @@
 						'fontBackgroundColor',
 						'highlight',
 						'horizontalLine',
+						'removeFormat',
 						'code',
 						'codeBlock',
-						'pageBreak',
-						'removeFormat'
+						'specialCharacters'
           ]
         },
         simpleUpload: {
@@ -56,11 +56,13 @@
             ]
         },
         table: {
-          contentToolbar: [
-            'tableColumn',
-            'tableRow',
-            'mergeTableCells'
-          ]
+					contentToolbar: [
+						'tableColumn',
+						'tableRow',
+						'mergeTableCells',
+						'tableCellProperties',
+						'tableProperties'
+					]
         },
       } )
       .then( editor => {

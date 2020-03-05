@@ -3,27 +3,36 @@
       .create( document.querySelector( '#<%= id %>' ), {
         toolbar: {
           items: [
-            'heading',
-            '|',
-            'bold',
-            'italic',
-            'link',
-            'bulletedList',
-            'numberedList',
-            '|',
-            'indent',
-            'outdent',
-            '|',
-            'imageUpload',
-            'blockQuote',
-            'insertTable',
-            'mediaEmbed',
-            'undo',
-            'redo',
-            '|',
-            'fontSize',
-            'fontColor',
-            'fontBackgroundColor',
+						'heading',
+						'|',
+						'bold',
+						'italic',
+						'link',
+						'underline',
+						'strikethrough',
+						'bulletedList',
+						'numberedList',
+						'alignment',
+						'|',
+						'indent',
+						'outdent',
+						'|',
+						'imageUpload',
+						'blockQuote',
+						'insertTable',
+						'mediaEmbed',
+						'undo',
+						'redo',
+						'fontBackgroundColor',
+						'fontColor',
+						'fontSize',
+						'fontFamily',
+						'highlight',
+						'horizontalLine',
+						'removeFormat',
+						'specialCharacters',
+						'codeBlock',
+						'code'
           ]
         },
         simpleUpload: {
@@ -44,9 +53,11 @@
         },
         table: {
           contentToolbar: [
-            'tableColumn',
-            'tableRow',
-            'mergeTableCells'
+						'tableColumn',
+						'tableRow',
+						'mergeTableCells',
+						'tableCellProperties',
+						'tableProperties'
           ]
         },
       } )

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    new_ckeditor (0.1.0)
+    new_ckeditor (0.1.1)
       rails
 
 GEM

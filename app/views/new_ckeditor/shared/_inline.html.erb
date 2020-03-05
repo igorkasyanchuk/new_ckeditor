@@ -5,38 +5,54 @@
 
   InlineEditor
       .create( document.querySelector( '#<%= id %>_div' ), {
-        toolbar: {
-          items: [
-            'heading',
-            '|',
-            'bold',
-            'italic',
-            'link',
-            'bulletedList',
-            'numberedList',
-            '|',
-            'indent',
-            'outdent',
-            '|',
-            'imageUpload',
-            'blockQuote',
-            'insertTable',
-            'mediaEmbed',
-            'undo',
-            'redo',
-            '|',
-            'fontSize',
-            'fontColor',
-            'fontBackgroundColor',
-          ]
-        },
+				toolbar: {
+					items: [
+						'heading',
+						'|',
+						'bold',
+						'italic',
+						'underline',
+						'strikethrough',
+						'link',
+						'bulletedList',
+						'numberedList',
+						'alignment',
+						'|',
+						'indent',
+						'outdent',
+						'|',
+						'imageUpload',
+						'blockQuote',
+						'insertTable',
+						'mediaEmbed',
+						'undo',
+						'redo',
+						'fontBackgroundColor',
+						'fontColor',
+						'fontSize',
+						'fontFamily',
+						'highlight',
+						'horizontalLine',
+						'removeFormat',
+						'specialCharacters',
+						'codeBlock'
+					]
+				},
+				language: 'en',
+				table: {
+					contentToolbar: [
+						'tableColumn',
+						'tableRow',
+						'mergeTableCells',
+						'tableProperties'
+					]
+				},
         simpleUpload: {
           uploadUrl: '/upload',
           headers: {
               'X-CSRF-Token': document.querySelectorAll('meta[name="csrf-token"]')[0].content
           }
         },
-        language: 'en',
         image: {
           toolbar: [ 'imageTextAlternative', '|', 'imageStyle:alignLeft', 'imageStyle:full', 'imageStyle:alignRight' ],
 
@@ -45,13 +61,6 @@
                 'alignLeft',
                 'alignRight'
             ]
-        },
-        table: {
-          contentToolbar: [
-            'tableColumn',
-            'tableRow',
-            'mergeTableCells'
-          ]
         },
       } )
       .then( editor => {
