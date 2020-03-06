@@ -193,6 +193,9 @@ You can editor in some parent div and set height explicitly for editor inside.
 - gif with demo
 - tests
 - check how it works with turbolinks?
+- fix issue fix JS map files
+- easier configuration
+- saver function to save inline/balloon editor
 
 ## Customization
 
