@@ -9,6 +9,7 @@ Simple way to integrate Ruby on Rails application with CKEditor 5. This is the l
 - Classic editor
 - File uploads (custom controller & uploader)
 - Tables, Media, and other toolbar buttons
+- (requires maybe 10-15 minutes to configure gem, but works fine, better to clone and check source of demo)
 
 ![Demo](/docs/new_ckeditor.png)
 [>> Demo site](https://new-ckeditor-demo.herokuapp.com/)
