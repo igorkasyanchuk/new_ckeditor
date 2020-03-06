@@ -77,12 +77,33 @@ class CreateCkEditorImages < ActiveRecord::Migration[6.0]
   end
 end
 ```
-
 Run this migration.
 
 3. Create Carrierwave uploader `rails g uploader CkEditorImage`. Open and edit it if needed.
 
 4. Open again controller, edit logic, check user, check params, etc. You have a full control how to implement logic of storing files.
+
+## CKEditor 5 Toolbar Customization
+
+You can edit in appropriate JS file, for example:
+
+```javascript
+    toolbar: {
+      items: [
+        'heading',
+        '|',
+        'bold',
+        'italic',
+        'underline',
+        'strikethrough',
+        'link',
+        'bulletedList',
+        'numberedList',
+        'alignment',
+        '|',
+        'indent',
+        ...
+```
 
 ## Output
 
@@ -123,20 +144,12 @@ You can editor in some parent div and set height explicitly for editor inside.
 
 ## TODO
 
-- different types of ckeditors
-- generator for toolbar
 - configuration to specify toolbar
-- generator for controller?
-- store files using active storage
-- store with user_id, and parent?
-- readme, samples
+- generators?
+- better and better readme
 - gif with demo
-- sample with ajax? and with ballon?
 - tests
-- CSFR-Token
-- support inline editor?
-- remove title plugin
-- check how it works with turbolinks
+- check how it works with turbolinks?
 
 ## Customization
 
