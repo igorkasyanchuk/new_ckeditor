@@ -1,10 +1,52 @@
 # Rails + CKEditor 5
 
-Short description and motivation.
+DEMO: https://new-ckeditor-demo.herokuapp.com/
+
+Simple way to integrate Ruby on Rails application with CKEditor 5. This is the latest version of CKEditor which has more modern UI and cool toolbars. Main features:
+
+- Inline editor
+- Balloon editor
+- Classic editor
+- File uploads (custom controller & uploader)
+- Tables, Media, and other toolbar buttons
+
+![Demo](/docs/new_ckeditor.png)
+[>> Demo site](https://new-ckeditor-demo.herokuapp.com/)
 
 ## Usage
 
-How to use my plugin.
+```
+1. Add gem
+2. bundle
+3. rails g new_ckeditor
+4. add js in application.js, or to the assets pipeline
+5. in your form
+  # to load CKEditor JS
+  = javascript_include_tag 'new_ckeditor/classic/ckeditor', 'data-turbolinks-track': 'reload'
+  
+  # form control
+  = f.ckeditor :description
+```
+
+### Inline/Balloon
+
+For inline/balloon editor you need to define a saver function, example is: [app.js](https://github.com/igorkasyanchuk/new_ckeditor_demo/blob/master/app/assets/javascripts/app.js)
+
+```erb
+  <p>
+    <%= ckeditor_tag :contentxxxx, @post.content, editor: { template: :balloon, type: :balloon, js: "sendData('#{update_inline_post_path(@post)}', editorHiddenField.value)" } %>
+  </p>
+```
+  
+### File uploads
+
+Define logic for saving file (controller/uploader).
+
+Sample: https://github.com/igorkasyanchuk/new_ckeditor_demo/blob/master/app/controllers/posts_controller.rb#L10-L23
+
+You need also to configure your CKEditor editor config, sample: https://github.com/igorkasyanchuk/new_ckeditor_demo/blob/master/app/views/new_ckeditor/shared/_inline.html.erb#L50-L54
+
+You need to define path to which send file and also CSRF token for security purposes. You can see how it works in example above.
 
 ## Installation
 
