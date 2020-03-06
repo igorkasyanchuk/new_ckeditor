@@ -19,7 +19,7 @@ Simple way to integrate Ruby on Rails application with CKEditor 5. This is the l
 ```
 1. Add gem
 2. bundle
-3. rails g new_ckeditor
+3. rails g new_ckeditor # to generate toolbars & configs
 4. add js in application.js, or to the assets pipeline
 5. in your form
   # to load CKEditor JS
@@ -35,9 +35,14 @@ For inline/balloon editor you need to define a saver function, example is: [app.
 
 ```erb
   <p>
-    <%= ckeditor_tag :contentxxxx, @post.content, editor: { template: :balloon, type: :balloon, js: "sendData('#{update_inline_post_path(@post)}', editorHiddenField.value)" } %>
+    <%= ckeditor_tag :content, @post.content, editor: { template: :balloon, type: :balloon, js: "sendData('#{update_inline_post_path(@post)}', editorHiddenField.value)" } %>
   </p>
 ```
+
+Options:
+
+- teamplte - file with configuration for CKEditor, toolbar, path to upload files, etc
+- type - type of editor, depending on the type behavior is a little different. Balloon and inline editors works almost the same way. Classic works better as form field. 
   
 ### File uploads
 
@@ -146,6 +151,14 @@ You can edit in appropriate JS file, for example:
         '|',
         'indent',
         ...
+```
+
+You can create a copy of each `classic`, `balloon`', `inline` .js file and use. Or even creae custom build on `ckeditor.com` site and put in your app.
+
+After that you can specify which exactly editor type and template with toolbar configuration to use:
+
+```erb
+<%= form.ckeditor :description, editor: { template: :inline, type: :inline } %>
 ```
 
 ## Output
