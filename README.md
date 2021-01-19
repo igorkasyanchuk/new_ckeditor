@@ -1,5 +1,7 @@
 # Rails + CKEditor 5
 
+[![RailsJazz](https://github.com/igorkasyanchuk/rails_time_travel/blob/main/docs/my_other.svg?raw=true)](https://www.railsjazz.com)
+
 DEMO: https://new-ckeditor-demo.herokuapp.com/
 
 Simple way to integrate Ruby on Rails application with CKEditor 5. This is the latest version of CKEditor which has more modern UI and cool toolbars. Main features:
