@@ -4,7 +4,7 @@
 [![https://www.patreon.com/igorkasyanchuk](https://github.com/igorkasyanchuk/rails_time_travel/blob/main/docs/patron.svg?raw=true)](https://www.patreon.com/igorkasyanchuk)
 [![Listed on OpenSource-Heroes.com](https://opensource-heroes.com/badge-v1.svg)](https://opensource-heroes.com/r/igorkasyanchuk/new_ckeditor)
 
-DEMO: https://new-ckeditor-demo.herokuapp.com/
+DEMO is available inside dummy app inside gem source code.
 
 Simple way to integrate Ruby on Rails application with CKEditor 5. This is the latest version of CKEditor which has more modern UI and cool toolbars. Main features:
 
